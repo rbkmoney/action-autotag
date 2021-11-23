@@ -27,4 +27,4 @@ jobs:
         shell: bash
 
       - name: Run all scripts
-        run: yarn run:all
+        run: yarn run all
