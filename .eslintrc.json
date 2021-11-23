@@ -1,0 +1,35 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "plugin:jest/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:github/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 9,
+    "sourceType": "module"
+  },
+  "rules": {
+    "@typescript-eslint/no-use-before-define": "off",
+    "comma-dangle": "off",
+    "import/no-namespace": "off",
+    "prefer-promise-reject-errors": "off",
+    "sort-imports": "off",
+    "i18n-text/no-en": "off",
+    "import/no-dynamic-require": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "camelcase": "off"
+  }
+}
