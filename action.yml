@@ -37,4 +37,4 @@ outputs:
     description: The version, as defined in package.json or explicitly set in the input.
 runs:
   using: "node12"
-  main: "lib/index.js"
+  main: "dist/index.js"
