@@ -21,11 +21,10 @@ async function run() {
 
 		core.debug(` Working Directory: ${process.env.GITHUB_WORKSPACE}:\n${dir}`);
 
-		if (!Object.prototype.hasOwnProperty.call(process.env, 'GITHUB_TOKEN')) {
-			if (!Object.prototype.hasOwnProperty.call(process.env, 'INPUT_GITHUB_TOKEN')) {
-				core.setFailed('Invalid or missing GITHUB_TOKEN.');
-				return;
-			}
+		const githubToken = core.getInput('github_token');
+		if (!githubToken) {
+			core.setFailed('Invalid or missing GITHUB_TOKEN.');
+			return;
 		}
 
 		const pkgRoot = core.getInput('package_root', { required: false });
@@ -40,7 +39,7 @@ async function run() {
 		core.debug(` Detected version ${pkg.version}`);
 
 		// Get authenticated GitHub client (Ocktokit): https://github.com/actions/toolkit/tree/master/packages/github#usage
-		const octokit = github.getOctokit(process.env.GITHUB_TOKEN || process.env.INPUT_GITHUB_TOKEN);
+		const octokit = github.getOctokit(githubToken);
 
 		// Get owner and repo from context of payload that triggered the action
 		const { owner, repo } = context.repo;
