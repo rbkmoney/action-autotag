@@ -161,7 +161,7 @@ async function run() {
 			core.setOutput('tagref', newReference.data.ref);
 		}
 	} catch (error) {
-		core.warning(error.message);
+		core.error(error.message);
 		core.setOutput('tagname', '');
 		core.setOutput('tagsha', '');
 		core.setOutput('taguri', '');
