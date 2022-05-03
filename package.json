@@ -26,7 +26,7 @@
     "@actions/github": "^5.0.0"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.15",
+    "@types/jest": "^27.5.0",
     "@types/ramda": "^0.27.30",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
